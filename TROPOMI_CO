@@ -1,0 +1,12 @@
+import ee
+import geemap
+dataset_geu = ee.FeatureCollection('FAO/GAUL/2015/level0')
+Map.addLayer(dataset_geu, {}, "FAO/GAUL/2015/level0")
+dataset_tzc = ee.ImageCollection('COPERNICUS/S5P/NRTI/L3_CO')
+Map.addLayer(dataset_tzc, {}, "COPERNICUS/S5P/NRTI/L3_CO", .filterDate('2020-04-01', '2020-04-21'))  
+Map.search_locations
+Map.search_loc_geom
+location = Map.search_loc_geom
+print(location.getInfo())
+tn = dataset_geu.filterbounds(guatemala) 
+Map.addLayer(tn, {}, 'Gua')
